@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="gestionproduitsfx.FXMLDocumentController"
+            prefWidth="800" prefHeight="600">
+
+    <top>
+        <GridPane hgap="10" vgap="10" style="-fx-padding: 10;">
+            <Label text="Code :" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfCode" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Libellé :" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfLibelle" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Type :" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cbType" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Quantité :" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfQuantite" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Disponible :" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <CheckBox fx:id="cbDispo" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                <Button text="Ajouter" fx:id="btnAjouter" onAction="#ajouterProduit"/>
+                <Button text="Modifier" fx:id="btnModifier" onAction="#modifierProduit"/>
+                <Button text="Supprimer" fx:id="btnSupprimer" onAction="#supprimerProduit"/>
+                <Button text="Actualiser" fx:id="btnActualiser" onAction="#actualiser"/>
+            </HBox>
+        </GridPane>
+    </top>
+
+    <center>
+        <TableView fx:id="tableProduits" style="-fx-padding: 10;">
+            <columns>
+                <TableColumn fx:id="colId" text="ID"/>
+                <TableColumn fx:id="colCode" text="Code"/>
+                <TableColumn fx:id="colLibelle" text="Libellé"/>
+                <TableColumn fx:id="colType" text="Type"/>
+                <TableColumn fx:id="colQuantite" text="Quantité"/>
+                <TableColumn fx:id="colDispo" text="Disponible"/>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>
